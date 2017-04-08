@@ -3,11 +3,12 @@ package org.padawan.service;
 import org.padawan.model.PredioEntity;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@EJB
+@Stateless
 public class PredioService {
 
     @PersistenceContext
