@@ -6,13 +6,22 @@ import java.util.Date;
 
 @Entity
 @NamedStoredProcedureQuery(
-        name = "predioEmerson",
+        /*name = "predioEmerson",
         procedureName = "dbo.cantPredio",
         resultClasses = PredioEntity.class,
         parameters = {
                 @StoredProcedureParameter(mode = ParameterMode.IN, type = Integer.class, name = "iOpSp"),
-                @StoredProcedureParameter(mode = ParameterMode.IN, type = Date.class, name = "fecha"),
+                @StoredProcedureParameter(mode = ParameterMode.IN, type = String.class, name = "fecha"),
                 @StoredProcedureParameter(mode = ParameterMode.OUT, type = Double.class, name = "sum")
+        }*/
+
+        name = "predioEmerson",
+        procedureName = "dbo.cantPredio",
+        resultClasses = PredioEntity.class,
+        parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, type = Integer.class),
+                @StoredProcedureParameter(mode = ParameterMode.IN, type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.REF_CURSOR, type = void.class)
         }
 )
 public class PredioEntity implements Serializable {
